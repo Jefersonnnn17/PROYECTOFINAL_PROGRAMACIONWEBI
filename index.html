@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Compras Familiares - Bolivia</title>
+    <link rel="stylesheet" href="../proyectofinal/css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Simulador Web de Consumo Familiar en Contexto de Crisis</h1>
+        <p>Materia: Programación Web I | Estudiante: Jeferson Espejo</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#simulador">Simulador</a>
+        <a href="#casos">Casos de Estudio</a>
+        <a href="#conclusiones">Conclusiones</a>
+    </nav>
+
+    <main>
+        <section id="inicio">
+            <h2>Contexto del Desafío: Presupuesto Familiar Limitado</h2>
+            <div class="bloque-contexto">
+                <div class="texto-contexto">
+                    <p>La coyuntura socioeconómica actual en Bolivia ha generado un escenario de alta complejidad para la economía de los hogares. Factores multicausales como la irregularidad en la distribución de carburantes, las dificultades en el flujo de divisas extranjeras y los constantes conflictos sociales o bloqueos de rutas, han tenido un effecto directo en la cadena de suministro nacional. Esto se traduce en un incremento imprevisto y volátil en los precios de los productos de la canasta familiar básica (como el arroz, fideo, aceite, carne y tubérculos).</p>
+                    <p>Ante esta situación, el poder adquisitivo del salario de las familias bolivianas sufre una depreciación constante. El dinero disponible para el abastecimiento semanal o mensual ya no rinde de la misma manera, obligando a los ciudadanos a priorizar insumos críticos, reducir porciones o buscar sustitutos de menor costo. Este simulador interactivo nace como una herramienta educativa y matemática para evaluar cuantitativamente cómo estas fluctuaciones de precios merman la capacidad de consumo real, permitiendo clasificar el impacto financiero en el presupuesto del hogar.</p>
+                </div>
+                <div class="contenedor-img">
+                    <figure>
+                        <img src="../proyectofinal/img/queque.png" alt="Mercado local y canasta familiar en Bolivia" class="img-responsiva">
+                        <figcaption>Abastecimiento diario en un mercado tradicional: anaqueles provistos de frutas y verduras frescas cuyos costos varían debido a la inestabilidad en el transporte de carga interdepartamental.</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulador">
+            <h2>El Simulador de Compras</h2>
+            <div class="tarjeta-simulador">
+                <form id="form-presupuesto">
+                    <div class="grupo-control">
+                        <label for="presupuesto">Presupuesto Disponible (Bs):</label>
+                        <input type="number" id="presupuesto" min="0" step="0.1" placeholder="Ej. 500" required>
+                    </div>
+
+                    <fieldset>
+                        <legend>Agregar Producto a la Canasta</legend>
+                        <div class="grupo-control">
+                            <label for="producto-nombre">Producto:</label>
+                            <input type="text" id="producto-nombre" placeholder="Ej. Arroz">
+                        </div>
+                        <div class="grupo-control">
+                            <label for="producto-precio">Precio unitario (Bs):</label>
+                            <input type="number" id="producto-precio" min="0" step="0.1" placeholder="Ej. 11">
+                        </div>
+                        <div class="grupo-control">
+                            <label for="producto-cantidad">Cantidad / Unidades:</label>
+                            <input type="number" id="producto-cantidad" min="1" placeholder="Ej. 10">
+                        </div>
+                        <button type="button" id="btn-agregar">Agregar a la lista</button>
+                    </fieldset>
+
+                    <div class="acciones-formulario">
+                        <button type="submit" id="btn-calcular">Calcular Total</button>
+                        <button type="button" id="btn-limpiar">Limpiar Todo</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="contenedor-resultados" class="oculto">
+                <h3>Resultados de la Simulación</h3>
+                <table id="tabla-productos">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio Unitario</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-canasta">
+                    </tbody>
+                </table>
+
+                <div id="resumen-calculos">
+                </div>
+            </div>
+        </section>
+
+        <section id="casos">
+            <h2>Casos de Estudio para Probar</h2>
+            <p>Utiliza los siguientes datos de control planteados en los requerimientos del proyecto para verificar que las funciones algorítmicas de cálculo y validación de JavaScript operen correctamente:</p>
+            <div class="tabla-caso">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parámetro de Entrada</th>
+                            <th>Valor de Simulación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Presupuesto Familiar Disponible</td><td>500 Bs</td></tr>
+                        <tr><td>Costo Total Calculado de la Compra</td><td>580 Bs</td></tr>
+                        <tr><td><strong>Resultado Esperado del Sistema:</strong></td><td><strong>Línea de presupuesto excedida. Déficit de 80 Bs.</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="conclusiones">
+            <h2>Conclusiones Académicas</h2>
+            <div class="bloque-conclusion">
+                <div class="contenedor-img">
+                    <figure>
+                        <img src="../proyectofinal/img/pai.png" alt="Planificación financiera y economía en el hogar" class="img-responsiva">
+                        <figcaption>Comerciantes locales atendiendo en una tienda de abarrotes, quienes interactúan directamente con las familias bolivianas que buscan optimizar cada boliviano de su presupuesto diario.</figcaption>
+                    </figure>
+                </div>
+                <div class="texto-conclusion">
+                    <p>La aplicación de modelos lógicos y matemáticos a través del entorno de desarrollo web permite visibilizar con precisión matemática el impacto microeconómico de la inflación latente en el país. El análisis de datos recolectados mediante simuladores como este demuestra de manera empírica que el encarecimiento de los insumos esenciales limita severamente la resiliencia financiera familiar, eliminando casi por completo la capacidad de ahorro y el acceso a gastos secundarios (salud, educación técnica o recreación).</p>
+                    <p>En conclusión, el desarrollo de esta plataforma no solo cumple con los objetivos técnicos de estructuración semántica, adaptabilidad móvil e interactividad del DOM exigidos en la materia, sino que también funge como un recurso concientizador. Evidencia que una gestión presupuestaria rigurosa y la priorización estratégica de recursos son mecanismos defensivos indispensables para las familias bolivianas en periodos de inestabilidad de precios del mercado local.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contenido-footer">
+            <p>&copy; 2026 - Universidad Mayor de San Andrés | FCPN</p>
+            <div class="enlaces-entrega">
+                <a href="#" target="_blank" class="btn-enlace"> Ver Repositorio Git (GitHub)</a>
+                <a href="#" target="_blank" class="btn-enlace"> Ver Página Web Publicada</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../proyectofinal/js/script.js"></script>
+</body>
+</html>
